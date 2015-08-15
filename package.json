@@ -1,6 +1,6 @@
 {
   "name": "slack-boom",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Slack bot to auto-kick an user when one of their messages has reached a threshold of negative reactions",
   "repository": "izeau/slack-boom",
   "bugs": "https://github.com/izeau/slack-boom/issues",
