@@ -19,6 +19,8 @@ if (!token || isNaN(treshold)) {
   process.exit(1);
 }
 
+var isNotABot = token.slice(0, 4) !== 'xoxb';
+
 var slack = new Slack(token);
 
 slack.on('reaction_added', function (update) {
@@ -33,6 +35,7 @@ slack.on('reaction_added', function (update) {
     var reactions = response.message.reactions;
     var count     = reactions.find(reactionMatches).count;
     var sender    = slack.getUserByID(response.message.user);
+    var params    = { channel: message.channel, user: response.message.user };
 
     if (count < treshold) {
       return;
@@ -45,6 +48,15 @@ slack.on('reaction_added', function (update) {
       '\n',
       getMessageURL(channel, message)
     ].join(' '));
+
+    if (isNotABot) {
+      slack._apiCall('channels.kick', params);
+
+      // invite the offender back 5 minutes later
+      setTimeout(function () {
+        slack._apiCall('channels.invite', params);
+      }, 5 * 60 * 1000);
+    }
   });
 });
 

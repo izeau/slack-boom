@@ -4,11 +4,11 @@
 
 A Slack bot to auto-kick an user when one of their messages has reached a threshold of negative reactions
 
-  0. [Create a bot](https://my.slack.com/services/new/bot)
+  0. [Create a bot](https://my.slack.com/services/new/bot) or [generate a full-access token](https://api.slack.com/web#authentication)
   0. Install globally with `npm install --global slack-boom`
   0. Run `slack-boom <token> <treshold> <reaction>`, e.g. `slack-boom <token> 3 boom` will kick users receiving 3 'boom' (:boom:) reactions to one of their messages
 
-**NOTE**: no auto-kick at the time, but it will gladly send a kick command that you can copy/paste in seconds!
+**NOTE**: to get the auto-kick feature actually working, you have to give in a full-access token instead of a bot token, which you'll get [here](https://api.slack.com/web#authentication).
 
 ## License
 
