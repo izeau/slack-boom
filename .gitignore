@@ -1,0 +1,5 @@
+node_modules/*
+!node_modules/slack-client/
+node_modules/slack-client/**/*.coffee
+node_modules/slack-client/node_modules
+node_modules/slack-client/test

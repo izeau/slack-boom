@@ -1,0 +1,17 @@
+{
+  "name": "slack-boom",
+  "version": "1.0.0",
+  "description": "A Slack bot to auto-kick an user when one of their messages has reached a threshold of negative reactions",
+  "repository": "izeau/slack-boom",
+  "bugs": "https://github.com/izeau/slack-boom/issues",
+  "bin": "./slack-boom.js",
+  "dependencies": {
+    "array.prototype.find": "^1.0.0",
+    "slack-client": "https://github.com/hildjj/node-slack-client/tarball/reactions"
+  },
+  "scripts": {
+    "prepublish": "cd ./node_modules/slack-client && npm install"
+  },
+  "author": "Jean Dupouy <jean.dupouy@rednet.io>",
+  "license": "MIT"
+}
